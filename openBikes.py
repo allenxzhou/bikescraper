@@ -1,3 +1,5 @@
+# Opens up all the Craigslist ads
+
 import sys
 import re
 import webbrowser

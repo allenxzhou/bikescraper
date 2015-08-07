@@ -1,14 +1,12 @@
+# Generates .txt file of Craigslist ad URLs
+
 import re
 import mechanize
 import urllib
-import urllib2
+import requests
 
 """
 DEBUG ISSUES:
-
-- For the following url: "http://sfbay.craigslist.org/nby/bik/3947827531.html",
-mechanize.urlopen has issues, whereas urllib.urlopen does not. As a result,
-using the latter for now.
 
 - Abnormality in the quotations around hyperlink references: for the references
 to the actual post links, uses double quotations; for the references to next/prev
@@ -18,7 +16,7 @@ page, uses single quotation.
 
 Brief info: search through bicycle listings on Craigslist
 
-How-to: Mechanize - 
+How-to: Mechanize
 1. Create url to be accessed
 2. Create a request (mechanize.Request)
 3. Open the url for that request (mechanize.urlopen)
